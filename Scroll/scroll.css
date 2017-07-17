@@ -1,0 +1,43 @@
+html {
+	box-sizing: border-box;
+	background: #ffc600;
+	font-size: 20px;
+	font-weight: 200;
+}
+.container {
+	background: white;
+	margin:50px 100px;
+	padding: 50px;
+	text-align: justify;
+}
+
+h1 {
+	text-align: center;
+	font-size: 50px;
+}
+img {
+	width: 600px;
+	margin: 20px;
+}
+.align-right {
+	float:right;
+	margin-right: 0;
+}
+.align-left {
+	float:left;
+	margin-left: 0;
+}
+.slide-in {
+	opacity: 0;
+	transition: all .5s;
+}
+.align-right.slide-in {
+	transform: translateX(30%) scale(0.95);
+}
+.align-left.slide-in {
+	transform: translateX(-30%) scale(0.95);
+}
+.slide-in.active {
+	opacity: 1;
+	transform: translateX(0%) scale(1);
+}

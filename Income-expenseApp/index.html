@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/Adalon.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/Adalon.js"></script>
+	
+</head>
+<body>
+	<div class="container" id="input-part">
+		<div class="row">
+			<div class="col-md-5">
+				<h1>Income:</h1>
+				<form id=form-income>
+					<label>Type:<br><input type="text" name="" value="" id="incomeType" placeholder="Type">
+					</label><br>
+					<label>Amount:<br><input type="text" name="" value="" id="incomePrice" placeholder="Amount"> Ft</label><br>
+					<label>Date:<br><input type="text" id="datepicker1" placeholder="Date"></label><br>
+					<button id="income-button" class="btn btn-success">Save</button>	
+				</form>	
+			</div>
+			<div class="col-md-5">
+				<h1>Expense:</h1>
+				<form id=form-expense>
+					<label>Type:<br><input type="text" name="" value="" id="expenseType" placeholder="Type">
+					</label><br>
+					<label>Amount:<br><input type="text" name="" value="" id="expensePrice" placeholder="Amount"> Ft</label><br>
+					<label>Date:<br><input type="text" id="datepicker2" placeholder="Date"></label><br>
+					<button id="expense-button" class="btn btn-success">Save</button>	
+				</form>
+			</div>
+			<div class="col-md-2">
+				<h1>Total: <span></span></h1>
+				<p>Fill up database with testdata!</p>
+				<button class="btn btn-info" id="test">TestData</button>
+			</div>
+		</div>
+	</div>
+	<div class="container" id="list-part">
+		<div class="row">
+			<div class="col-md-12">
+				<table id="datas" class="table table-striped">
+					<thead>
+						<tr>
+							<th>Income/Expense</th>
+							<th>Type</th>
+							<th>Date</th>
+							<th>Amount</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr></tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<canvas id="myChart" width="400" height="400"></canvas>
+			</div>	
+		</div>
+	</div>
+</body>
+</html>

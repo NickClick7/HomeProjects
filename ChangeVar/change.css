@@ -1,0 +1,43 @@
+:root {
+	--spacing: 10px;
+	--blur: 5px;
+	--base-color: #F5C50F;
+	--scale: 1;
+	--translate: 0;
+}
+
+body{
+	background-color: #192E3F;
+	color:white;
+	text-align: center;
+}
+h1 {
+	font-size: 58px;
+}
+label {
+	font-size: 38px;
+}
+img {
+	margin:0 auto;
+	width: 400px;
+	margin-top: 50px;
+	padding: var(--spacing);
+	background: var(--base-color);
+	filter: blur(var(--blur));
+	transform: scaleX(var(--scale)) translateX(var(--translate));
+	transition: all 0.5s;
+
+}
+span {
+	color: var(--base-color);
+}
+button {
+	background-color: var(--base-color);
+	margin-top: 20px;
+	border-color: var(--base-color);
+	color: #192E3F;
+	font-weight: bold;
+	font-size:15px;
+	width: 100px;
+	height: 40px;
+}

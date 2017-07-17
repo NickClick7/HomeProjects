@@ -1,0 +1,80 @@
+html{
+	font-family: 'Shadows Into Light Two', cursive;
+	color: white;
+	font-size: 20px;
+	font-weight: 200;
+	box-sizing: border-box;
+}
+body {
+	margin: 0px;
+}
+p {
+	text-transform: uppercase;
+}
+.panels {
+	text-align: center;
+	align-items: center;
+	display: flex;
+}
+.panel-1 {
+	background: url(images/dance.jpg);
+}
+.panel-2 {
+	background: url(images/give.jpg);
+}
+.panel-3 {
+	background: url(images/explore.jpg);
+}
+.panel-4 {
+	background: url(images/give-all.jpg);
+}
+.panel-5 {
+	background: url(images/motion.jpg);
+}
+.panel {
+	margin:0px;
+	min-height: 100vh;
+	overflow: hidden;
+	background-position: center;
+	background-size: cover;
+	flex: 1;
+	justify-content: center;
+	transition: 
+		font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+		flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+		background 0.2s;
+	display: flex;
+	flex-direction: column;
+}
+.panel>* {
+	margin: 0;
+	transition: transform 0.5s;
+	width: 100%;
+	flex: 1 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+.panel p:nth-child(2) {
+	font-size: 4em;
+}
+.panel p {
+	font-size: 2em;
+}
+.panel.open {
+	font-size: 40px;
+	flex:5;
+}
+.panel> *:first-child {
+	transform: translateY(-100%);
+}
+.panel.open-active> *:first-child {
+	transform: translateY(0);
+}
+.panel> *:last-child {
+	transform: translateY(100%);
+}
+.panel.open-active> *:last-child {
+	transform: translateY(0);
+}

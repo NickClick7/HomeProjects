@@ -1,0 +1,40 @@
+body {
+	background: no-repeat top center /cover url("https://static.pexels.com/photos/25792/pexels-photo-25792.jpg") ;
+}
+#body-2 {
+	background: no-repeat top center / cover url(https://static.pexels.com/photos/116144/pexels-photo-116144.jpeg);
+}
+#body-3 {
+	background: no-repeat top center / cover url(https://static.pexels.com/photos/34075/pexels-photo.jpg);
+}
+#body-4 {
+	background: no-repeat top center/ cover url(https://static.pexels.com/photos/374697/pexels-photo-374697.jpeg);
+}
+#body-5 {
+	background: no-repeat top center/ cover url(https://static.pexels.com/photos/29787/pexels-photo-29787.jpg);
+}
+
+
+
+
+label {
+	width: 50px;
+}
+.btn-primary {
+	width: 150px;
+	margin: 10px;
+}
+
+nav {
+	font-weight: bold;
+}
+table {
+	margin:50px;
+}
+table th{
+	font-weight: bold;
+	font-size: 18px;
+}
+table tr {
+	font-weight: bold;
+}

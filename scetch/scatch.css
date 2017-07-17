@@ -1,0 +1,32 @@
+#container {
+	width: 600px;
+	height: 600px;
+	border: 2px solid black;
+	background-color: grey;
+	margin:0 auto;
+	overflow: hidden;
+	font-size: 0;
+}
+.block {
+	display: inline-block;
+	background-color: grey;
+}
+.black {
+	background-color: black;
+}
+button {
+	width: 150px;
+	height: 50px;
+	background-color: grey;
+	position: absolute;
+	border-radius: 5%;
+	margin:30px;
+	text-align: center;
+	padding: 10px;
+	font-size: 20px;
+	border: 2px solid black;
+}
+#reset {
+	top:50px;
+	left:100px;
+}

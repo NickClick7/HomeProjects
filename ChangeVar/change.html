@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="change.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="change.js"></script>
+</head>
+<body>
+	<h1>Update <span>CSS</span> variables with <span>JS</span></h1>
+	<div class="controls">
+		<label for="spacing">Spacing: </label>
+		<input type="range" name="spacing" min="0" max="200" value="10" data-sizing="px"><br>
+		<label for="blur">Blur: </label>
+		<input type="range" name="blur" min="0" max="25" value="4" data-sizing="px"><br>
+		<label for="scale">Scaling: </label>
+		<input type="range" name="scale" min="0.2" max="5" value="1"><br>
+		<label for="translate">Moving: </label>
+		<input type="range" name="translate" min="-1000" max="1000" value="0" data-sizing="px"><br>
+		<label for="base-color">Base color: </label>
+		<input type="color" name="base-color" value="#F5C50F"><br>
+		<button type="">Switch picture</button>
+	</div>
+	<div>
+		<img src="img/pic-1.jpg" alt="">
+	</div>
+	
+</body>
+</html>

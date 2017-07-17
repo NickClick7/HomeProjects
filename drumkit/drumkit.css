@@ -1,0 +1,34 @@
+body {
+	background: url(img/pic2.jpg) no-repeat center center/100% fixed;
+	
+}
+.key {
+	width: 50px;
+	background: rgba(0,0,0,0.4);
+	border: 4px solid black;
+	margin: 20px;
+	padding: 5px;
+	text-align: center;
+	color: white;
+	border-radius: 5px;
+	text-shadow: 0 0 5px black;
+	font-size: 2rem;
+	transition: all 0.07s;
+	float: left;
+}
+.keys {
+	position: absolute;
+	top: calc(50% - 200px);
+	left:calc(50% - 500px);
+	height: 200px;
+	
+}
+span{
+	color: orange;
+	font-size: 18px;
+}
+.playing {
+	transform: scale(1.1);
+	border-color: orange;
+	text-shadow: 0 0 10px orange;
+}

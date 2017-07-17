@@ -1,0 +1,89 @@
+body {
+	background: url(img/samuel-zeller-249358.jpg) center center/100% no-repeat fixed;
+}
+.clock-face{
+	background: url(img/birds-frame-backgrounds-powerpoint.jpg) left top/150% no-repeat;
+	border-radius: 50%;
+	width: 300px;
+	height: 300px;
+	border: 6px solid #281F1F;
+	position: absolute;
+	top: 50px;
+	left: 150px;
+	text-align: center;
+
+}
+.hand {
+	background-color: #281F1F;
+	width: 120px;
+	height: 5px;
+	position: absolute;
+	top:50%;
+	left:30px;
+	transform-origin: 100%;
+	transform: rotate(90deg);
+	
+}
+.hand-sec {
+	height: 2px;
+	transition: all 0.05s;
+	transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+.hand-hour {
+	width: 100px;
+	left:50px;
+	
+}
+.numbers {
+	font-size: 20px;
+	font-weight: bold;
+	position: absolute;
+}
+.number-12 {
+	top:10px;
+	left:140px;
+}
+.number-6 {
+	top:270px;
+	left:150px;
+}
+.number-3 {
+	top:140px;
+	left:280px;
+}
+.number-9 {
+	top:140px;
+	left:10px;
+}
+.number-1 {
+	top:30px;
+	left:210px;
+}
+.number-2 {
+	top:80px;
+	left:260px;
+}
+.number-4 {
+	left:260px;
+	top:210px;
+}
+.number-5 {
+	left:210px;
+	top:250px;
+}
+.number-7 {
+	top:250px;
+	left:80px;
+}
+.number-8 {
+	top:200px;
+	left:30px;
+}
+.number-10 {
+	top:70px;
+	left:30px;
+}
+.number-11 {
+	top:30px;
+	left:80px;
+}

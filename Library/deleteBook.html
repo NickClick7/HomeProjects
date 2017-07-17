@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Library</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="src/css/style.css">
+
+	<script src="src/ctrl/initialize.js"></script>
+	<script src="src/model/Book.js"></script>
+	<script src="src/view/deleteBook.js"></script>
+	<script>
+		window.addEventListener("load", library.view.deleteBook.setupUserInterface);
+	</script>
+</head>
+<body id="body-5">
+<div class="container">
+	<div class="col-md-6 col-md-offset-6">
+		<h1>My library: Delete a book record</h1>
+			<div class="form-group">
+				<form id="Book">
+					<label for="">Select book:
+						<select name="selectBook">
+							<option value="">----</option>
+						</select>
+					</label>
+					<p><button type="button" class="btn-danger" name="commit">Delete</button></p>
+				</form>
+			</div>
+			<nav class="pull-right">
+				<a href="index.html"><button class="btn-primary">Back to main menu</button></a>
+			</nav>
+	</div>
+</div>
+
+</body>
+</html>

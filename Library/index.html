@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Library</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="src/css/style.css">
+
+	<script src="src/model/book.js"></script>
+	<script src="src/ctrl/initialize.js"></script>
+</head>
+<body>
+<div class="container">
+<div class="col-md-6 col-md-offset-6">
+	
+</div>
+	<h1>My library</h1>
+	<p>This app supports the following operations:</p>
+	<menu >
+	<ul class="list-unstyled">
+		<li><a href="listBooks.html"><button class="btn-primary" type="button">List all books</button></a></li>
+		<li><a href="createBook.html"><button class="btn-primary" type="button">Add a new book</button></a></li>
+		<li><a href="updateBook.html"><button class="btn-primary" type="button">Update a book</button></a></li>
+		<li><a href="deleteBook.html"><button class="btn-primary" type="button">Delete a book</button></a></li>
+		<li><button class="btn-primary" type="button" onclick="Book.clearData()">Clear database</button></li>
+		<li><button class="btn-primary" type="button" onclick="Book.createTestData()">Create test data</button></li>
+	</ul>
+		
+	</menu>
+</div>
+	
+</body>
+</html>
