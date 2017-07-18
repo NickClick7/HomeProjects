@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>flip-card</title>
+	<style type="text/css" media="screen">
+		body {
+			perspective: 1000px;
+		}
+		.card {
+			width: 200px;
+			height: 300px;
+			position: relative;
+			margin: 100px auto;
+			transform-style: preserve-3d;
+			transition:4s;
+
+		}
+		.card:hover {
+			transform: rotateY(180deg);
+		}
+		.card > * {
+			position: absolute;
+			top:0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border-radius: 8px;
+			backface-visibility: hidden;
+		}
+		.front {
+			background: url(images/card2.png) center center / 100% 100% no-repeat;
+			transform: rotateY(180deg);
+		}
+
+
+		.back {
+			background: url(images/card.jpg) center center/ 100% 100% no-repeat;
+		}
+		
+
+
+
+
+
+	</style>
+</head>
+<body>
+	<div class="card">
+		<div class="front"></div>
+		<div class="back"></div>
+	</div>
+	
+</body>
+</html>

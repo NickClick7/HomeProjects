@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pyramid animation3D</title>
+	<style type="text/css" media="screen">
+		body {
+			perspective: 1000px;
+		}
+		.pyramid {
+			width: 200px;
+			height: 200px;
+			position: relative;
+			left:900px;
+			top:200px;
+			transform-style: preserve-3d;
+			animation-name: rotating;
+			animation-duration: 15s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+			transform-origin: 50% 50%;
+		}
+		.side {
+			position: absolute;
+			width: 0px;
+			height: 0px;
+			left: 0;
+			top:0;
+
+		}
+		.base {
+			position: absolute;
+			width: 200px;
+			height: 200px;
+			top: 0;
+			left: 0;
+			background-color: #4A1F4F;
+
+		}
+		.side-1 {
+			border-left:100px solid transparent; 
+			border-right: 100px solid transparent;
+			border-bottom: 200px solid #C442D4;
+			transform: rotateX(60deg) ;
+			transform-origin: 0 100%;
+		}
+		.side-2 {
+			border-left:100px solid transparent; 
+			border-right: 100px solid transparent;
+			border-bottom: 200px solid #9A20A8;
+			transform: translateY(-200px) rotateX(120deg);
+			transform-origin: 0 100%;
+		}
+		.side-3 {
+			border-left:100px solid transparent; 
+			border-right: 100px solid transparent;
+			border-bottom: 200px solid #763E7D;
+			transform: translateY(-200px) rotateZ(90deg) rotateX(60deg) ;
+			transform-origin: 0 100%;
+		}
+		.side-4 {
+			border-left:100px solid transparent; 
+			border-right: 100px solid transparent;
+			border-bottom: 200px solid #9D80A0;
+			transform: translateY(-200px)  rotateZ(-90deg) rotateX(60deg);
+			transform-origin: 100% 100%;
+		}
+		@keyframes rotating{
+			0% {
+				transform: rotateX(0) rotateY(0);
+			}
+			25% {
+				transform: rotateX(70deg) rotateY(80deg) rotateZ(-45deg);
+			}
+			50% {
+				transform: rotateX(190deg) rotateY(-100deg) rotateZ(30deg);
+			}
+			75% {
+				transform: rotateX(-160deg) rotateY(60deg) rotateZ(-160deg);
+			}
+			100% {
+				transform: rotateX(20deg) rotateY(-60deg) rotateZ(20deg);
+			}
+		}
+		.tetrahedron {
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top:200px;
+			left:200px;
+			transform-style: preserve-3d;
+			animation-name: rotating2;
+			animation-duration: 15s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+
+		}
+		.triangle {
+			position: absolute;
+			width: 0px;
+			height: 0px;
+			left: 0;
+			top:0;
+			
+		}
+		.triangle-1 {
+			border-left:100px solid transparent; 
+			border-right: 100px solid transparent;
+			border-bottom: 173.2px solid #088A85;
+		}
+		.triangle-2 {
+			border-left:100px solid transparent; 
+			border-right: 100px solid transparent;
+			border-bottom: 173.2px solid #58FAF4;
+			transform: rotateX(70.5deg);
+			transform-origin: 0 100%;
+		}
+		.triangle-3 {
+			border-left:100px solid transparent; 
+			border-right: 100px solid transparent;
+			border-bottom: 173.2px solid #0489B1;
+			transform: rotateZ(60deg) rotateX(109.5deg);
+			transform-origin: 100% 100%;
+		}
+		.triangle-4 {
+			border-left:100px solid transparent; 
+			border-right: 100px solid transparent;
+			border-bottom: 173.2px solid #0B3861;
+			transform: rotateZ(-60deg) rotateX(109.5deg);
+			transform-origin: 0 100%;
+		}
+		@keyframes rotating2{
+			0% {
+				transform: rotateX(0) rotateY(0);
+			}
+			25% {
+				transform: rotateX(-70deg) rotateY(-80deg) rotateZ(45deg);
+			}
+			50% {
+				transform: rotateX(-190deg) rotateY(100deg) rotateZ(-30deg);
+			}
+			75% {
+				transform: rotateX(160deg) rotateY(-60deg) rotateZ(160deg);
+			}
+			100% {
+				transform: rotateX(-20deg) rotateY(60deg) rotateZ(-20deg);
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<div class="pyramid">
+		<div class="side side-1"></div>
+		<div class="side side-2"></div>
+		<div class="side side-3"></div>
+		<div class="side side-4"></div>
+		<div class="base"></div>
+	</div>
+	<div class="tetrahedron">
+		<div class="triangle triangle-1"></div>
+		<div class="triangle triangle-2"></div>
+		<div class="triangle triangle-3"></div>
+		<div class="triangle triangle-4"></div>
+	</div>
+</body>
+</html>
