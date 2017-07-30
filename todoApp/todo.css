@@ -1,0 +1,39 @@
+h1 {
+	text-align: center;
+}
+.btn-danger {
+	position: absolute;
+	right: 100px;
+}
+input[type="checkbox"] {
+	margin-right: 20px;
+}
+a:hover {
+	text-decoration: none;
+
+}
+a {
+	cursor: pointer;
+}
+ul {
+	font-size: 18px;
+}
+#todos {
+	display: none;
+}
+.crossed {
+	text-decoration-line: line-through;
+}
+.hidden-input {
+	display: none;
+}
+ul {
+	margin-top: 20px;
+}
+.warning {
+	border: 2px solid red;
+	outline-color: red;
+}
+.highlight {
+	color: red;
+}
