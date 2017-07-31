@@ -1,3 +1,7 @@
+body {
+	background: url(images/seth-schwiet-40984.jpg), top center no-repeat;
+	background-size: cover;
+}
 h1 {
 	text-align: center;
 }
@@ -14,6 +18,7 @@ a:hover {
 }
 a {
 	cursor: pointer;
+	color:white;
 }
 ul {
 	font-size: 18px;
@@ -36,4 +41,7 @@ ul {
 }
 .highlight {
 	color: red;
+}
+#projects>h1 {
+	color:white;
 }
