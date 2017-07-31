@@ -1,4 +1,5 @@
 $(function(){
+	//window.alert('You are in ' + (document.compatMode==='CSS1Compat'?'Standards':'Quirks') + ' mode.')
 
 	var list = JSON.parse(localStorage.getItem("list"));
 	if(list === null) {
@@ -25,7 +26,15 @@ $(function(){
 		$("#pList a").removeClass('highlight');
 		$("#todos").hide();
 	});
-	$("#pAdd").on("click", function(){
+
+	$("#pAdd").on("click", clickpAdd);
+	$("#pInput").keypress(function(e){
+		if(e.which == 13) {
+			$("#pAdd").click();
+		}
+	});
+
+	function clickpAdd() {
 		var pInput = $("#pInput").val();
 		var newLi = $("<li data-target="+list.length+"><input type='text' class='editor hidden-input'><a>"+pInput+"</a><button class='btn-xs btn-danger del'>X</button></li>");
 		if(pInput != "") {
@@ -35,8 +44,27 @@ $(function(){
 			saveToLocalStorage();
 		}
 		$("#pInput").val("");
-		
+	}
+
+	$("#tAdd").on("click", clicktAdd);
+	$("#tInput").keypress(function(e) {
+		if(e.which == 13) {
+			$("#tAdd").click();
+		}
 	});
+	function clicktAdd() {
+		var tInput = $("#tInput").val();
+		if(list[p].todos) {
+			var newLi = $("<li data-target="+list[p].todos.length+"><input type='checkbox' class='check' >"+tInput+"<button class='btn-xs btn-danger'>X</button></li>");
+			if(tInput != "") {
+				list[p].todos.push({"name":tInput, "checked":"false"});
+				$("#tList").append(newLi);
+				saveToLocalStorage();
+				$("#todos>span").text("");
+			}
+			$("#tInput").val("");	
+		}
+	}
 	var p;
 	$("#pList").on("click","a", function(){
 		$("#tList").empty();
@@ -52,16 +80,16 @@ $(function(){
 		}
 		if(list[p].todos.length != 0) {
 			$("#todos>span").text("");
-		}
-		for(var j=0; j<list[p].todos.length;j++) {
-			if(list[p].todos[j].checked == true) {
-				var newLi = $("<li data-target="+j+"><input type='checkbox' class='check' checked>"+list[p].todos[j].name+
-					"<button class='btn-xs btn-danger del'>X</button></li>");
-			}else{
-				var newLi = $("<li data-target="+j+"><input type='checkbox' class='check' >"+list[p].todos[j].name+
-					"<button class='btn-xs btn-danger del'>X</button></li>");
+			for(var j=0; j<list[p].todos.length;j++) {
+				if(list[p].todos[j].checked == true) {
+					var newLi = $("<li data-target="+j+"><input type='checkbox' class='check' checked>"+list[p].todos[j].name+
+						"<button class='btn-xs btn-danger del'>X</button></li>");
+				}else{
+					var newLi = $("<li data-target="+j+"><input type='checkbox' class='check' >"+list[p].todos[j].name+
+						"<button class='btn-xs btn-danger del'>X</button></li>");
+				}
+				$("#tList").append(newLi);
 			}
-			$("#tList").append(newLi);
 		}
 		$("#todos").show();
 		
@@ -74,8 +102,11 @@ $(function(){
 		$(this).siblings('input').removeClass('hidden-input').val($(this).text()).focus();
 		pName = $(this);
 		pTarget = $(this).parent("li").data("target");
+		console.log(pTarget);
 		$(this).hide();
-		console.log(pName);
+		if(list.length == 2) {
+			pTarget = 1;
+		}
 	});
 	$("#pList").on("blur",".editor", function(){
 		var change = $(this).val();
@@ -91,6 +122,10 @@ $(function(){
 		pName.show();
 		pName.parent("li").show();
 		pName.siblings(".editor").addClass('hidden-input');
+		if(list.length == 1) {
+			$("#projects>span").text("No projects!");
+			return;
+		}
 	});
 	$("#pList").on("keyup",".editor",function(){
 		if($(this).val() == "") {
@@ -100,21 +135,8 @@ $(function(){
 		}
 	});
 
-	$("#tAdd").on("click", function(){
-		var tInput = $("#tInput").val();
-		if(list[p].todos) {
-			var newLi = $("<li data-target="+list[p].todos.length+"><input type='checkbox' class='check' >"+tInput+"<button class='btn-xs btn-danger'>X</button></li>");
-			if(tInput != "") {
-				list[p].todos.push({"name":tInput, "checked":"false"});
-				$("#tList").append(newLi);
-				saveToLocalStorage();
-				$("#todos>span").text("");
-			}
-			$("#tInput").val("");	
-		}
-		
-	});
 	$("#tList").on("click",".del", function(){
+		console.log("most kéne törölnie");
 		$(this).parent().remove();
 		var idx = $(this).parent().data("target");
 		list[p].todos.splice(idx, 1);
@@ -124,26 +146,26 @@ $(function(){
 		}else{
 			$("#todos>span").text("");
 		}
+
 	});
 	$("#pList").on("click",".del", function(){
 		var idx = $(this).parent().data("target");
-		if(list[idx].todos.length != 0 ) {
+		if(list[p].todos.length != 0 ) {
 			$("#projects>span").text("There are still undone tasks!!!").show();	
 		}else{
 			$(this).parent().remove();
 			list.splice(idx, 1);
 			saveToLocalStorage();
 			$("#todos").hide();
-			if(list.length == 1) {
-				$("#projects>span").text("No projects!").show();
-			}else{
-				$("#projects>span").text("").hide();
-			}
+			location.reload();
 		}
+
 	});
 	$("#tList").on("change",".check", function(){
 		var idx = $(this).parent().data("target");
+		console.log(idx);
 		if($(this).is(":checked")){
+			console.log($(this));
 			$(this).attr("checked", true);
 			$(this).parent().addClass('crossed');
 			list[p].todos[idx].checked = true;
