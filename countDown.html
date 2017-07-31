@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>CountDown</title>
+	<style type="text/css" media="screen">
+		.back {
+			width: 100px;
+			height: 50px;
+			background-color: red;
+			color: white;
+		}
+		.green {
+	        border-color: green;
+	        background-color: green;
+        }
+        #buttons {
+        	margin-top:100px;
+        	text-align: center;
+        }
+        #myText{
+        	text-align: center;
+			font-size: 38px;
+			color:red;
+        }
+        #timer {
+			text-align: center;
+			font-weight: bold;
+			font-size: 48px;
+			color:green;
+        }
+	</style>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script>
+		$(function(){
+			var promeses = [];
+			$(".back").each(function(){
+				let p = new Promise((resolve, reject) => {
+					$(this).on("click",function(){
+						$(this).addClass("green");
+						var number = $(this).data("target");
+						$("#myText").text(number+". button pushed");
+						resolve();
+					});
+				});
+				promeses.push(p);
+			});
+			Promise.all(promeses).then(() => {
+				$("#myText").text("All three buttons pushed!");
+				timer();
+				setTimeout( () => {
+					$("#timer").text("START!!!")
+				},10000);
+			});
+			var i = 9;
+			function timer(){
+				var countdown = setInterval(function(){
+					$("#timer").text(i);
+					i = i-1;
+					if(i == 0) {
+						clearInterval(countdown);
+					}
+				},1000);
+			}
+		});
+	</script>
+</head>
+<body>
+	<div id="buttons">
+		<button class="back" data-target="1">1</button>
+		<button class="back" data-target="2">2</button>
+		<button class="back" data-target="3">3</button>
+		<br><span id="myText"></span>
+		<br><span id="timer"></span>
+	</div>
+</body>
+</html>
