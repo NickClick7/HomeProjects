@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		.box {
+			width: 200px;
+			height: 200px;
+			background-color: blue;
+			transition: all 2s;
+			position: relative;
+			margin:0 auto;
+
+		}
+		.box:hover {
+			width: 500px;
+			height: 500px;
+			transform: rotate(360deg);
+
+		}
+		.sf {
+			width: 140px;
+			height: 140px;
+			background-color:white;
+			position: absolute;
+			top: 30px;
+			left: 30px;
+			transition: all 2s;
+		}
+		.box:hover .sf{
+			width: 350px;
+			height: 350px;
+			transform: rotate(-360deg);
+		}
+		.box:hover .sf2{
+			width: 200px;
+			height: 200px;
+			transform: rotate(180deg);
+		}
+		.sf2 {
+			width: 80px;
+			height: 80px;
+			background-color:blue;
+			position: absolute;
+			top: 30px;
+			left: 30px;
+			transition: all 2s;
+		}
+		.f {
+			width: 50px;
+			height: 50px;
+			background-color: black;
+			position: relative;
+			float: left;
+		}
+		#a01 {
+			animation-name: moving;
+			animation-delay: 3s;
+			animation-duration: 5s;
+			animation-iteration-count: 4; 
+			
+		}
+		#a02 {
+			animation-name: moving2, szivarvany;
+			animation-delay: 2s;
+			animation-duration: 5s;
+			animation-iteration-count: 4;
+			
+		}
+		#a03 {
+			animation-name: moving;
+			animation-delay: 1s;
+			animation-duration: 5s;
+			animation-iteration-count: 4;
+		}
+		#a04 {
+			animation-name: moving2, szivarvany;
+			animation-duration: 5s;
+			animation-iteration-count: 4;
+		}
+		#a05 {
+			animation-name: moving3;
+			animation-delay: 2s;
+			animation-duration: 5s;
+			animation-iteration-count: 4;
+		}
+		#a06 {
+			animation-name: moving, szivarvany;
+			animation-delay: 1s;
+			animation-duration: 5s;
+			animation-iteration-count: 4;
+		}
+		#a07 {
+			animation-name: moving2;
+			animation-delay: 3s;
+			animation-duration: 5s;
+			animation-iteration-count: 4;
+		}
+		#a08 {
+			animation-name: moving3, szivarvany;
+			animation-duration: 5s;
+			animation-iteration-count: 4;
+		}
+
+		@keyframes moving {
+			0%   {left:0px; top:0px;}
+		    25%  {left:200px; top:0px;}
+		    50%  {left:200px; top:200px;}
+		    75%  {left:0px; top:200px;}
+		    100% {left:0px; top:0px;}
+		}
+		@keyframes moving2 {
+			0%   {left:0px; top:0px;}
+		    25%  {left:0px; top:200px;}
+		    50%  {left:200px; top:200px;}
+		    75%  {left:200px; top:0px;}
+		    100% {left:0px; top:0px;}
+		}
+		@keyframes moving3 {
+			0%   {left:0px; top:0px;}
+		    25%  {left:0px; top:-200px;}
+		    50%  {left:-200px; top:-200px;}
+		    75%  {left:-200px; top:0px;}
+		    100% {left:0px; top:0px;}
+		}
+		.circle {
+			width: 200px;
+			height: 200px;
+			border-radius: 0;
+			background-color: yellow;
+			position: absolute;
+			transition: all 3s;
+			bottom:100px;
+			right:100px;
+			animation-name: moving4, szivarvany;
+			animation-duration: 10s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+		
+		@keyframes moving4 {
+			0%   {right:100px; bottom:100px;}
+		    25%  {right:200px; bottom:200px;}
+		    50%  {right:250px; bottom:250px;}
+		    75%  {right:300px; bottom:300px;}
+		    100% {right:100px; bottom:100px;}
+		}
+		@keyframes szivarvany{
+			0% {background-color: red;}
+			25% {background-color: yellow;} 
+			50% {background-color: green;}
+			75% {background-color: blue;}
+			100% {background-color: purple;}
+		}
+		.c1 {
+			width: 50px;
+			height: 50px;
+			background-color: red;
+			border-radius: 0;
+			transition: all 3s;
+			position: relative;
+			animation-name: movingAround;
+			animation-duration: 5s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+
+		}
+		.circle:hover {
+			animation-play-state: paused;
+		}
+		.circle:hover .c1{
+			animation-play-state: paused;
+		}
+		
+		@keyframes movingAround {
+			0%   {left:0px; top:0px;}
+		    25%  {left:150px; top:0px;}
+		    50%  {left:150px; top:150px;}
+		    75%  {left:0px; top:150px;}
+		    100% {left:0px; top:0px;}
+		}
+		.c2 {
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background-color: white;
+			position: absolute;
+			animation: myOrbit 4s linear infinite;
+			animation-iteration-count: infinite;
+			left: 20px;
+			top:20px;
+		}
+		@keyframes myOrbit {
+		    from { transform: rotate(0deg) translateX(20px); }
+		    to   { transform: rotate(360deg) translateX(20px); }
+		}
+
+		
+		
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="sf">
+			<div class="sf2"></div>
+		</div>
+	</div>
+	<div class="f" id="a01"></div>
+	<div class="f" id="a02"></div>
+	<div class="f" id="a03"></div>
+	<div class="f" id="a04"></div>
+	<div class="f" id="a05"></div>
+	<div class="f" id="a06"></div>
+	<div class="f" id="a07"></div>
+	<div class="f" id="a08"></div>
+
+	<div class="circle">
+		<div class="c1">
+			<div class="c2"></div>
+		</div>
+	</div>
+</body>
+</html>
