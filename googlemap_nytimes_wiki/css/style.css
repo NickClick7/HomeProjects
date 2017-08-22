@@ -1,0 +1,56 @@
+* {box-sizing:border-box;}
+body {
+    background: url("../images/map.png") top center/100% no-repeat;
+}
+
+.bgimg {
+    position:fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    z-index:-1;
+    opacity:1;
+}
+
+.greeting {
+    text-shadow: 1px 1px 3px rgba(255,255,255, .5);
+    text-align: center;
+}
+
+.wikipedia-container {
+    padding:10px;
+    padding-left: 100px;
+    margin-right: 30px;
+    background-color: rgba(255,255,255,0.7);
+}
+
+.nytimes-container {
+    margin-left: 30px;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.7);
+}
+
+.article-list {
+    margin: 0;
+    padding: 0;
+}
+
+.article {
+    list-style-type: none;
+    padding:10px;
+    border-top: 1px solid #CCC;
+}
+.article:first-child {
+    border-top:none;
+}
+.flexbox {
+    display: flex;
+    overflow: hidden;
+}
+.flexbox .col {
+    flex:1;
+}
+img {
+    width: 400px;
+
+}
