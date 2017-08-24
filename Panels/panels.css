@@ -11,6 +11,9 @@ body {
 p {
 	text-transform: uppercase;
 }
+img {
+	width: 300px;
+}
 .panels {
 	text-align: center;
 	align-items: center;
