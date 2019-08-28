@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Szemmozgós animació</title>
+	<script
+	  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".box").on("mousemove",function(e){
+
+				var screenCenter = {x:$(document).width()/2, y:$(document).height()/2};
+				var mouseDistanceX = e.clientX - screenCenter.x;
+				var mouseDistanceY = e.clientY - screenCenter.y;
+				var mouseDistance = Math.sqrt( mouseDistanceX*mouseDistanceX + mouseDistanceY*mouseDistanceY);
+				var circleDistance = $(".eye").width()/3 - $(".eyeball").width()/3;
+				var circleDistanceX = mouseDistanceX*circleDistance / mouseDistance;
+				var circleDistanceY = mouseDistanceY*circleDistance / mouseDistance;
+
+				$(".eyeball").css({
+					top: "calc( 10% + "+circleDistanceY+ "px)",
+					left: "calc(50% + "+circleDistanceX+ "px)"
+				});
+			});
+			$(".box")
+			.on("mouseenter",function(){
+				$(this).children().css("top", "50%");
+			})
+			.on("mouseleave",function(){
+				$(this).children().css("top", "100%");
+			});
+			$("input").on("focus",function(){
+				$(".mouth").css("height","16px");
+				$(".sparkle").css({"width":"5px","height":"5px"})
+			});
+			$("input").on("blur",function(){
+				$(".mouth").css("height","8px");
+				$(".sparkle").css({"width":"3px","height":"3px"})
+			});
+
+		});
+	</script>
+	<style type="text/css" media="screen">
+		.head {
+			background-color: #B09880;
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			z-index: 2;
+		}
+		.head-1 {
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			transform: translate(-50%, 20%);
+			transition: 0.7s 0.1s;
+		}
+		.head-2 {
+			position: absolute;
+			top: 100%;
+			left: 70%;
+			transform: translate(-50%, 5%);
+			transition: 1.2s 0.1s;
+		}
+		.head-3 {
+			position: absolute;
+			top: 100%;
+			left: 90%;
+			transform: translate(-50%, 40%);
+			transition: 0.6s 0.1s;
+		}
+		.eye {
+			background-color: white;
+			border-radius:50%;
+			position: absolute;
+			width:30px;
+			height: 30px;
+			top: 40%;	
+		}
+		.eye-left {
+			left: 30%;
+			transform: translate(-50%, -50%);
+		}
+		.eye-right {
+			left: 70%;
+			transform: translate(-50%, -50%);
+		}
+		.eyeball {
+			width: 15px;
+			height: 15px;
+			background-color: #755854;
+			position: absolute;
+			top: 10%;
+			left: 50%;
+			border-radius: 50%;
+			transition: 0.1s;
+		}
+		.eyeball-left {
+			transform: translate(-50%, 30%);
+		}
+		.eyeball-right {
+			transform: translate(-50%, 30%);
+		}
+		.sparkle {
+			width:3px;
+			height: 3px;
+			background-color: white;
+			border-radius: 50%;
+			position: absolute;
+			top: 3px;
+			left:8px;
+		}
+		.mouth {
+			background: #755854;
+			height: 8px;
+  			width: 30px;
+  			border-bottom-left-radius: 30px;
+			border-bottom-right-radius: 30px;
+			position: absolute;
+			top:80%;
+			left:50%;
+			transform: translate(-50%, -50%);
+			background-color: #755854;
+
+		}
+		.trunk {
+			background-color: #715551;
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			border: 5px solid #654C49;
+			box-shadow: inset 0px 10px 10px #654C49;
+			
+			z-index: 1;
+			overflow: hidden;
+		}
+		.trunk-1 {
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			transform: translate(-50%, 55%);
+			transition: 0.7s;
+		}
+		.trunk-2 {
+			position: absolute;
+			top: 100%;
+			left: 70%;
+			transform: translate(-50%, 45%);
+			transition: 1.2s;
+		}
+		.trunk-3 {
+			position: absolute;
+			top: 100%;
+			left: 90%;
+			transform: translate(-50%, 65%);
+			transition: 0.6s;
+		}
+		.box {
+			border: 2px solid #ddd;
+			border-radius: 20px;
+			width: 800px;
+			height: 300px;
+			background-color: white;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform:translate(-50%, -50%);
+			overflow: hidden;
+		}
+		body {
+			background-color: #F0F1F3;
+		}
+		input {
+			margin:50px;
+			width: 300px;
+			height: 50px;
+			border-radius: 20px;
+			border: 2px solid #ddd;
+			font-size: 18px;
+			padding:0 20px;
+		}
+		
+	</style>
+</head>
+<body>
+<p></p>
+<div class="box">
+	<div class="head head-1">
+		<div class="eye eye-left">
+			<div class="eyeball eyeball-left">
+				<div class="sparkle"></div>
+			</div>
+		</div>
+		<div class="mouth"></div>
+		<div class="eye eye-right">
+			<div class="eyeball eyeball-right">
+				<div class="sparkle"></div>
+			</div>
+		</div>
+	</div>	
+	<div class="trunk trunk-1"></div>
+	<div class="head head-2">
+		<div class="eye eye-left">
+			<div class="eyeball eyeball-left">
+				<div class="sparkle"></div>
+			</div>
+		</div>
+		<div class="mouth"></div>
+		<div class="eye eye-right">
+			<div class="eyeball eyeball-right">
+				<div class="sparkle"></div>
+			</div>
+		</div>
+	</div>	
+	<div class="trunk trunk-2"></div>
+	<div class="head head-3">
+		<div class="eye eye-left">
+			<div class="eyeball eyeball-left">
+				<div class="sparkle"></div>
+			</div>
+		</div>
+		<div class="mouth"></div>
+		<div class="eye eye-right">
+			<div class="eyeball eyeball-right">
+				<div class="sparkle"></div>
+			</div>
+		</div>
+	</div>	
+	<div class="trunk trunk-3"></div>
+	<input type="text" name="" value="" placeholder="your e-mail!">
+</div>
+</body>
+</html>
