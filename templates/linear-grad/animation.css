@@ -1,0 +1,42 @@
+body {
+	text-align: center;
+}
+.box {
+	width: 400px;
+	height: 300px;
+	background: linear-gradient(37deg, red 50%, purple 50%);
+	margin: 30px auto;
+	overflow: hidden;
+}
+.circle {
+	margin: 150px auto;
+	width: 1px;
+	height: 1px;
+	background-color: blue;
+	border-radius: 50%;	
+	transition: all 0.1s linear;
+	
+}
+.scaling {
+	transform: scale(500);
+	transition: all 4s linear;
+}
+.animated {
+	animation-name: rotate;
+    animation-duration: 0.5s;
+    animation-iteration-count: 10;
+    animation-timing-function: linear;
+}
+@keyframes rotate{
+	0% {background: linear-gradient(37deg, red 50%, purple 50%);}
+	10% {background: linear-gradient(70deg, red 50%, purple 50%);}
+	20% {background: linear-gradient(110deg, red 50%, purple 50%);}
+	30% {background: linear-gradient(170deg, red 50%, purple 50%);}
+	40% {background: linear-gradient(200deg, red 50%, purple 50%);}
+	50% {background: linear-gradient(240deg, red 50%, purple 50%);}
+	60% {background: linear-gradient(270deg, red 50%, purple 50%);}
+	70% {background: linear-gradient(300deg, red 50%, purple 50%);}
+	80% {background: linear-gradient(340deg, red 50%, purple 50%);}
+	90% {background: linear-gradient(360deg, red 50%, purple 50%);}
+	100% {background: linear-gradient(37deg, red 50%, purple 50%);}
+}
