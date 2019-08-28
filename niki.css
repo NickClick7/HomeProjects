@@ -1,0 +1,73 @@
+html,body { height: 100%; margin: 0px; padding: 0px; }
+.jumbotron {
+	background: url(images/bg.jpg) center center no-repeat;
+	background-size: cover;
+	margin-bottom: 0;
+	text-align: center;
+	height: 100%;
+}
+.jumbotron h5 {
+	position: relative;
+	font-weight: bold;
+	top:300px;
+}
+.jumbotron .btn {
+	background: -webkit-linear-gradient(#448AA4, #003252);
+}
+.jumbotron .back {
+	background: -webkit-linear-gradient(#7E6A6E, #0D1215);
+	border-color:#7E6A6E;
+}
+.jumbotron-projects {
+	background: url(images/bg2.jpg) center center no-repeat;
+	background-size: cover;
+	text-align: left;
+	margin-bottom: 0;
+	height: 100%;
+}
+.menu {
+	padding-top: 100px;
+	color:white;
+	text-align:center;
+	
+}
+.animations:hover {
+	color:#86B6D6;
+	font-weight: bold;
+	transform: scale(1.5);
+}
+
+.siteCopies:hover {
+	color:#86B6D6;
+	font-weight: bold;
+	transform: scale(1.5);
+}
+.games:hover {
+	color:#86B6D6;
+	font-weight: bold;
+	transform: scale(1.5);
+}
+.other:hover {
+	color:#86B6D6;
+	font-weight: bold;
+	transform: scale(1.5);
+}
+.animations {
+	transition: 0.5s all;
+}
+.siteCopies {
+	transition: 0.5s all;
+}
+.games {
+	transition: 0.5s all;
+}
+.other {
+	transition: 0.5s all;
+}
+.dropdown-menu {
+	background-color: #0C1114;
+	margin-top: 0;
+}
+.dropdown-menu li a {
+	color:white;
+}
