@@ -1,0 +1,81 @@
+html {
+    background: linear-gradient(#330000, #1a0000);
+    height: 100%;
+}
+body {
+    width: 900px;
+    margin: 0 auto;
+}
+.container {
+    float:left;
+    margin:200px auto 20px auto;
+    padding:10px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+#pieceBox{
+    border: 2px solid #000;
+    border-radius: 5px;
+    float: left;
+    height: 408px;
+    margin: 10px;
+    position:relative;
+    width: 408px;
+}
+#puzzleContainer {
+    border: 2px solid #000;
+    border-radius: 5px;
+    float: right;
+    margin: 10px;
+    height: 408px;
+    width: 408px;
+}
+.img {
+    background-image: url('./images/zardoz-sean-connery.jpg');
+    background-repeat: no-repeat;
+    height:100px;
+    width:100px;
+    float:left;
+    border:1px solid black;
+}
+ul {
+    text-align:center;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+#message{
+    clear:both;
+    display: none;
+    font-size: 20px;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+ul.buttons{
+    cursor:pointer;
+    margin-top:10px;
+    
+}
+ul button{
+    border:1px solid #000;
+    font-weight:bold;
+    margin:0 auto;
+    padding:10px 0;
+    text-align:center;
+    width:175px;
+    display:inline-block;
+    color: white;
+    border-radius: 5px;
+}
+#reset{
+    display:none;
+    margin-top:20px;
+    background: linear-gradient(#adaaaa, #696464);
+    border: 1px solid #696464;
+}
+#start {
+    margin-top:20px;
+    background: linear-gradient(#334f17, #33382e);
+    border: 1px solid #33382e;
+}
