@@ -1,0 +1,83 @@
+body, html {
+    display: table;
+    height: 100%;
+}
+body>div {
+    display: table-cell;
+}
+.clock {
+    vertical-align: top;
+    padding:50px;
+    width: 200px;
+    text-align: center;
+}
+#time {
+    font-size: 38px;
+    font-weight: bold;
+}
+body>p {
+    position: absolute;
+    bottom: 250px;
+    left: 70px;
+}
+#rocket {
+    position: absolute; 
+}
+.positon-1 {
+    bottom: 0;
+    left: 400px;
+}
+.position-2 {
+    animation: fly 4s ease-in;
+    animation-fill-mode: forwards;
+}
+.start {
+    width: 50px;
+    height: 50px;
+    font-weight: bold;
+    border-radius: 50%;
+    position: absolute;
+}
+.not-ready {
+    background-color: #eb391b;
+    border: 2px solid black;
+    animation: flash 1s infinite normal;
+}
+.ready {
+    background-color: #108b39;
+    border: 2px solid #108b39;
+}
+.start-1 {
+    bottom: 200px;
+    left:100px;
+    animation-delay: 0.2s;
+}
+.start-2 {
+    bottom: 100px;
+    left:50px;
+    animation-delay: 0.4s
+}
+.start-3 {
+    bottom: 100px;
+    left:150px;
+}
+#reset {
+    display: none;
+    background-color: rgb(114, 5, 5);
+    position: absolute;
+    bottom: 30px;
+    left: 70px;
+    border: 1px solid rgb(114, 5, 5);
+    padding: 10px;
+    color: white;
+}
+@keyframes flash {
+    0% {background-color: #eb391b;}
+    50% {background-color: #eb391b;}
+    100% {background-color: black;}
+}
+@keyframes fly{
+    0% {transform: translateY(0) translateX(0)}
+    100% {transform: translateY(-2000px) translateX(300px) rotate(40deg);}
+}
+
