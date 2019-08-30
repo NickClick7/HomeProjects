@@ -9,19 +9,28 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="lightbulb">
-        <button id="on-off">On</button>
-        <img src="./images/lb-off.jpg" id="bulb"> 
+    <div class="bulb-clock">
+        <div class="lightbulb">
+            <button id="on-off">On</button>
+            <img src="./images/lb-off.jpg" id="bulb"> 
+        </div>
+        <div class="clock">
+            <p id="time"></p>
+            <button id="time-button">Show time</button>
+        </div>
     </div>
-    <div class="clock">
-        <p id="time"></p>
-        <button id="time-button">Show time</button>
+    
+    <div class="rocket">
+        <div class="controlls">
+            <h2 class="title">Start the rocket!</h2>
+            <button class="start start-1 not-ready" data-number="1">X</button>
+            <button class="start start-2 not-ready" data-number="2">X</button>
+            <button class="start start-3 not-ready" data-number="3">X</button>
+            
+        </div>
+        <img src="./images/rocket.png" alt="" style="width: 150px" id="rocket" class="positon-1">
+        <button id="reset">Reset Rocket</button>
     </div>
-    <p>Start the rocket!</p>
-    <button class="start start-1 not-ready" data-number="1">X</button>
-    <button class="start start-2 not-ready" data-number="2">X</button>
-    <button class="start start-3 not-ready" data-number="3">X</button>
-    <button id="reset">Reset Rocket</button>
-    <img src="./images/rocket.png" alt="" style="width: 150px" id="rocket" class="positon-1">
+    
 </body>
 </html>

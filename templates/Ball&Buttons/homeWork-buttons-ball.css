@@ -1,5 +1,6 @@
 body {
 		background-color: black;
+		text-align: center;
 }		
 .ball {
 	width: 50px;
@@ -12,8 +13,8 @@ body {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
 	position: absolute;
-	top: 200px;
-	left: 375px;
+	top: 20%;
+	left: calc( 50% - 25px);
 	transition: all 1s;
 	
 }

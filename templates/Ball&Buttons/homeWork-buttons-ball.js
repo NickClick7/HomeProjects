@@ -28,8 +28,8 @@ window.addEventListener("DOMContentLoaded", function(){
 		newButton.innerText = pos.text;
 		ball.insertAdjacentElement("beforebegin", newButton);
 		newButton.addEventListener("click", function(){
-			ball.style.top = pos.top +"px";
-			ball.style.left = pos.left + "px";
+			ball.style.top = pos.top +"%";
+			ball.style.left = `calc( ${pos.left}% - 25px )`;
 		});
 	});
 

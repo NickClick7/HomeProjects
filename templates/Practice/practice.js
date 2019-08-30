@@ -68,7 +68,8 @@ document.addEventListener("DOMContentLoaded", function() {
         Promise.all(promises)
             .then(function (results) {
                 rocket.classList.add("position-2");
-                reset.style.display = "block";
+                setTimeout(function(){ reset.style.display = "block" }, 2000);
+                ;
             });
     }
     

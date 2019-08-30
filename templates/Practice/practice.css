@@ -1,12 +1,22 @@
 body, html {
-    display: table;
+    width: 100%;
     height: 100%;
+    margin: 0;
 }
-body>div {
-    display: table-cell;
+
+.bulb-clock {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between
 }
+
+.lightbulb {
+    justify-self: flex-start;
+    padding: 50px;
+}
+
 .clock {
-    vertical-align: top;
+    justify-self: flex-end;
     padding:50px;
     width: 200px;
     text-align: center;
@@ -15,17 +25,24 @@ body>div {
     font-size: 38px;
     font-weight: bold;
 }
-body>p {
+.rocket {
     position: absolute;
-    bottom: 250px;
-    left: 70px;
+    bottom: 50px;
+    left: 25%;
+    text-align: center;
+    width: 50%;
+    height: 200px;
+    display: flex;
+}
+.controlls {
+    position: relative;
 }
 #rocket {
-    position: absolute; 
+    position: absolute;
 }
 .positon-1 {
     bottom: 0;
-    left: 400px;
+    left: calc( 50% - 75px);
 }
 .position-2 {
     animation: fly 4s ease-in;
@@ -48,28 +65,30 @@ body>p {
     border: 2px solid #108b39;
 }
 .start-1 {
-    bottom: 200px;
-    left:100px;
+    left: 0;
     animation-delay: 0.2s;
+    top: 60px
 }
 .start-2 {
-    bottom: 100px;
-    left:50px;
-    animation-delay: 0.4s
+    left: 100px;
+    animation-delay: 0.4s;
+    top: 60px;
 }
 .start-3 {
+    top: 120px;
+    left: 50px;
     bottom: 100px;
-    left:150px;
 }
 #reset {
     display: none;
     background-color: rgb(114, 5, 5);
     position: absolute;
     bottom: 30px;
-    left: 70px;
+    left: 250px;
     border: 1px solid rgb(114, 5, 5);
     padding: 10px;
     color: white;
+    height: 40px;
 }
 @keyframes flash {
     0% {background-color: #eb391b;}
@@ -78,6 +97,6 @@ body>p {
 }
 @keyframes fly{
     0% {transform: translateY(0) translateX(0)}
-    100% {transform: translateY(-2000px) translateX(300px) rotate(40deg);}
+    100% {transform: translateY(-2000px) translateX(100px) rotate(20deg);}
 }
 
